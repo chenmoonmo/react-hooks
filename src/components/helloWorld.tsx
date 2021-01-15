@@ -5,7 +5,12 @@ import '../assets/css/hellworld.css'
 const Header: FC = (): ReactElement => {
   const [bgc, setBgc] = useState<string>(Color.getColor())
   return (
-    <div className="outer" onMouseEnter={() => setBgc(Color.getColor())}>
+    <div
+      style={{ marginBottom: '10px' }}
+      className="outer"
+      onMouseEnter={() => setBgc(Color.getColor())}
+    >
+      <p style={{ color: bgc }}> 使用useState改变颜色</p>
       <div className="inner" draggable style={{ background: bgc }}></div>
     </div>
   )
