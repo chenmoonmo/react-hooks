@@ -11,19 +11,20 @@ const a = (...rest: any[]): void => {
 
 const e = 'e'
 const l = 'l'
-
 a`H${e}L${l}O`
 
+const CheckBox = styled.div`
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: ${(props: { isChecked: boolean }) =>
+    props.isChecked ? 'pink' : 'green'};
+`
+
 const StyledTest: FC<IProps> = ({ isChecked }): ReactElement => {
-  const CheckBox = styled.div`
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-color: ${() => (isChecked ? 'pink' : 'greenyellow')};
-  `
   return (
     <div>
-      <CheckBox></CheckBox>
+      <CheckBox isChecked={isChecked}></CheckBox>
     </div>
   )
 }
